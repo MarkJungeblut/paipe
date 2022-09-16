@@ -2,7 +2,7 @@ import 'package:paipe/features/event/data/models/event.dart';
 import 'package:faker/faker.dart';
 import 'package:paipe/features/member/data/models/member.dart';
 import 'package:paipe/features/member/data/models/participation.dart';
-import 'package:paipe/features/task/data/fakes/task_fakes.dart';
+import 'package:paipe/features/tasks/data/fakes/task_fakes.dart';
 
 class MemberFakes {
   static List<Member> generateFakeMembers(int amount) {

@@ -1,0 +1,4 @@
+enum SelectedNavigation {
+  home,
+  task
+}

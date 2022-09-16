@@ -1,6 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:paipe/features/member/data/fakes/member_fakes.dart';
-import 'package:paipe/features/task/data/models/task.dart';
+import 'package:paipe/features/tasks/data/models/task.dart';
 
 class TaskFakes {
   static List<Task> generateFakeTasks(int amount) {

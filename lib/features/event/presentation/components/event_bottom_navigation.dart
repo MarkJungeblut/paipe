@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paipe/features/navigation/components/selected_navigation.dart';
 
 class EventBottomNavigationBarItem extends BottomNavigationBarItem {
   final VoidCallback delegate;
@@ -7,13 +8,14 @@ class EventBottomNavigationBarItem extends BottomNavigationBarItem {
 }
 
 class EventBottomNavigation extends StatefulWidget {
+
   final VoidCallback homeSelected;
-  final VoidCallback searchSelected;
+  final VoidCallback taskSelected;
 
   const EventBottomNavigation({
     Key? key,
     required this.homeSelected,
-    required this.searchSelected
+    required this.taskSelected
   }) : super(key: key);
 
   @override
@@ -25,10 +27,6 @@ class EventBottomNavigationState extends State<EventBottomNavigation> {
   int _selectedIndex = 0;
 
   late final List<EventBottomNavigationBarItem> _navigationBarItems = _getNavigationBarItems();
-
-  EventBottomNavigation() {
-    _navigationBarItems.elementAt(_selectedIndex).delegate();
-  }
 
   void _setActiveItem(int selectedIndex) {
     _navigationBarItems.elementAt(selectedIndex).delegate();
@@ -43,17 +41,13 @@ class EventBottomNavigationState extends State<EventBottomNavigation> {
       EventBottomNavigationBarItem(
           icon: const Icon(Icons.home),
           label: 'Home',
-          delegate: widget.homeSelected
+          delegate: widget.homeSelected,
       ),
       EventBottomNavigationBarItem(
-          icon: const Icon(Icons.search),
-          label: 'Search',
-          delegate: widget.searchSelected
+          icon: const Icon(Icons.task),
+          label: 'Tasks',
+          delegate: widget.taskSelected
       ),
-      // BottomNavigationBarItem(
-      //   icon: Icon(Icons.search),
-      //   label: 'Search',
-      // ),
       // BottomNavigationBarItem(
       //     icon: Icon(Icons.task),
       //     label: 'Tasks'
